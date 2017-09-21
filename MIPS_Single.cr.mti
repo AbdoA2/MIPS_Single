@@ -1,0 +1,169 @@
+F:/Projects/SystemVerilog/MIPS_Single/mux_4.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/mux_4.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mux_4
+
+Top level modules:
+	mux_4
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/regFile.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/regFile.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module regFile
+
+Top level modules:
+	regFile
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/datapath.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/datapath.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module datapath
+
+Top level modules:
+	datapath
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/exceptionUnit.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/exceptionUnit.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module exceptionUnit
+
+Top level modules:
+	exceptionUnit
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/k_shifter.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/k_shifter.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module k_shifter
+
+Top level modules:
+	k_shifter
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/testbench.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/testbench.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/adder.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/adder.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module adder
+
+Top level modules:
+	adder
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/maindec.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/maindec.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module maindec
+
+Top level modules:
+	maindec
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/ALU_Testbench.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/ALU_Testbench.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALU_Testbench
+
+Top level modules:
+	ALU_Testbench
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/sl2.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/sl2.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sl2
+
+Top level modules:
+	sl2
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/dmem.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/dmem.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module dmem
+
+Top level modules:
+	dmem
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/flopr.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/flopr.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module flopr
+
+Top level modules:
+	flopr
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/mux2.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/mux2.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mux2
+
+Top level modules:
+	mux2
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/v_left_shifter.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/v_left_shifter.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module v_left_shifter
+
+Top level modules:
+	v_left_shifter
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/shiftUnit.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/shiftUnit.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module shiftUnit
+
+Top level modules:
+	shiftUnit
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/logicUnit.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/logicUnit.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module logicUnit
+
+Top level modules:
+	logicUnit
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/signExtension.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/signExtension.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module signExtension
+
+Top level modules:
+	signExtension
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/v_right_shifter.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/v_right_shifter.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module v_right_shifter
+
+Top level modules:
+	v_right_shifter
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/imem.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/imem.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module imem
+
+Top level modules:
+	imem
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/mips.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/mips.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mips
+
+Top level modules:
+	mips
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/ALU.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/ALU.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/mux8.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/mux8.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mux8
+
+Top level modules:
+	mux8
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/arithmeticUnit.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/arithmeticUnit.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module arithmeticUnit
+
+Top level modules:
+	arithmeticUnit
+
+} {} {}} F:/Projects/SystemVerilog/MIPS_Single/top.sv {1 {vlog -work work -sv F:/Projects/SystemVerilog/MIPS_Single/top.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module top
+
+Top level modules:
+	top
+
+} {} {}}

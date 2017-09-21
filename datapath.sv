@@ -1,0 +1,82 @@
+module datapath(input logic clk, reset,
+                input logic alusrca, alusrcb, 
+                input logic[1:0] regdst,
+                input logic[2:0] regvalue,
+                input logic[3:0] aluop,
+                input logic memsign, regwrite, s, cause, excep, jr,
+                input logic beq, bne, bge, bl, jump,
+                input logic[31:0] instr,
+                output logic[31:0] pc,
+                input logic[31:0] readdata,
+                output logic[31:0] aluout, writedata,
+                output logic OF);
+  
+  logic[4:0] wa3;
+  logic[4:0] rdst;
+  logic[31:0] wd3, rd1, rd2, imm, alu_a, alu_b, imm_2, cop0, hi, lor, hir;
+  logic[31:0] regdata[7:0];
+  logic sign16, sign24, PCBranch;
+  logic CF, SF, ZF, c, c1;
+  logic[31:0] pcs[1:0], bta, jta, pc_, jt, epc, cause_, cause_1, pc4;
+  
+  assign PCBranch = (ZF & beq) | (~ZF & bne) | (((~ZF & ~SF) | ZF)& bge) | (SF & bl);
+  
+  // new pc
+  mux2 #(32) pcb(pc4, bta, PCBranch, pcs[0]);
+  mux2 #(32) pcj(jta, rd1, jr, pcs[1]);
+  mux_4 #(32) pcsrc_(pcs[0], pcs[1], 0'h100, 0'h100, {excep, jump}, pc_);
+  
+  flopr #(32) pcreg(clk, reset, 1'b1, pc_, pc);
+  
+  // register to write
+  mux2 #(5) reg_dst1(instr[20:16], instr[15:11], regdst[0], rdst);
+  mux2 #(5) reg_dst2(rdst, 5'b11111, regdst[1], wa3);
+  
+  regFile regfile(wd3, clk, regwrite, instr[25:21], instr[20:16], wa3, rd1, rd2);
+  
+  // assign writedata
+  assign writedata = rd2;
+  
+  // sign extend the immidiate
+  mux2 #(1) ex_m(instr[15], 1'b0, ~s, signimm);
+  signExtension #(16, 16) s_ex(instr[15:0], signimm, imm);
+  
+  // alu inputs
+  mux2 #(32) ma(rd1, {27'b0, instr[10:6]}, alusrca, alu_a);
+  mux2 #(32) mb(rd2, imm, alusrcb, alu_b);
+  
+  ALU alu(alu_a, alu_b, aluop, aluout, hi, CF, SF, ZF, OF);
+  
+  // register file input mux
+  mux2 #(1) mem_s(readdata[7], 1'b0, memsign, sign8);
+  mux2 #(1) mem_s1(readdata[15], 1'b0, memsign, sign16);
+  signExtension #(8, 24) s1(readdata[7:0], sign8, regdata[3]);
+  signExtension #(16, 16) s2(readdata[15:0], sign16, regdata[4]);
+  assign regdata[0] = aluout;
+  assign regdata[1] = {31'b0, SF};
+  assign regdata[2] = readdata;
+  assign regdata[5] = pc4;
+  assign regdata[6] = {instr[15:0], 16'b0};
+  assign regdata[7] = cop0;
+  mux8 #(32) regvalue_mux(regdata, regvalue, wd3);
+  
+  // branch calcuation
+  adder pc_4(pc, 32'b100, 1'b0, pc4, c);
+  sl2 shift2(imm, imm_2);
+  adder pc_bta(imm_2, pc4, 1'b0, bta, c1);
+  
+  // jump calculation
+  sl2 shiftj(instr, jt);
+  assign jta = {pc[31:28], jt[27:0]};
+  
+  // coprocessor 0
+  assign enM = instr[5:0] == 6'b011001 & instr[31:26] == 6'b0;
+  assign cause_ = cause? 8'h28 : 8'h30;
+  flopr #(32) EPC(clk, reset, excep, pc, epc);
+  flopr #(32) Cause(clk, reset, excep, cause_, cause_1);
+  flopr #(32) loR(clk, reset, enM, aluout, lor);
+  flopr #(32) hiR(clk, reset, enM, hi, hir);
+  //assign cop0 = instr[21]? epc : cause_1;
+  mux_4 #(32) m_co0(cause_1, epc, lor, hir, instr[12:11], cop0);
+endmodule
+                
